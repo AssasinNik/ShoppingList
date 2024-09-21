@@ -5,13 +5,11 @@ import androidx.room.PrimaryKey
 
 @Entity(tableName = "shopping_items")
 data class ShoppingEntity (
+    @PrimaryKey
     @ColumnInfo(name = "itemName")
     val name: String,
     @ColumnInfo(name = "itemCategory")
     val category: String,
     @ColumnInfo(name = "itemAmount")
     var amount: Int,
-){
-    @PrimaryKey(autoGenerate = true)
-    val id: Int? = null
-}
+)

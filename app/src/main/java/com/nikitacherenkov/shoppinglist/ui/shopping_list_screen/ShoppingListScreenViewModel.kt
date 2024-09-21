@@ -1,5 +1,6 @@
 package com.nikitacherenkov.shoppinglist.ui.shopping_list_screen
 
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.nikitacherenkov.shoppinglist.data.db.entities.ShoppingEntity
@@ -23,9 +24,5 @@ class ShoppingListScreenViewModel(
         }
     }
 
-    fun getAllShoppingItems(){
-        viewModelScope.launch(Dispatchers.IO) {
-            repository.getAllShoppingItems()
-        }
-    }
+    fun getAllShoppingItems() = repository.getAllShoppingItems()
 }
