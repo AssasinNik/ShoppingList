@@ -10,7 +10,7 @@ data class ShoppingEntity (
     @ColumnInfo(name = "itemCategory")
     val category: String,
     @ColumnInfo(name = "itemAmount")
-    val amount: Int,
+    var amount: Int,
 ){
     @PrimaryKey(autoGenerate = true)
     val id: Int? = null

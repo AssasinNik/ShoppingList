@@ -11,19 +11,19 @@ class ShoppingListScreenViewModel(
     private val repository: ShoppingRepository
 ): ViewModel() {
 
-    private fun upsert(item : ShoppingEntity){
+    fun upsert(item : ShoppingEntity){
         viewModelScope.launch(Dispatchers.IO) {
             repository.upsert(item)
         }
     }
 
-    private fun delete(item : ShoppingEntity){
+    fun delete(item : ShoppingEntity){
         viewModelScope.launch(Dispatchers.IO) {
             repository.delete(item)
         }
     }
 
-    private fun getAllShoppingItems(){
+    fun getAllShoppingItems(){
         viewModelScope.launch(Dispatchers.IO) {
             repository.getAllShoppingItems()
         }
